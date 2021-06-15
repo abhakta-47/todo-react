@@ -17,7 +17,7 @@ function App() {
         ToDo App
         {/* <h1>ToDo App</h1> */}
       </header>
-      <div className="container">
+      <div id="container">
         <SearchForm/>
         <ToDoList todoList={todoList} setTodoList={setTodoList} />
         <AddForm todoList={todoList} setTodoList={setTodoList}/>
