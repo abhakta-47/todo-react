@@ -42,10 +42,9 @@ body {
 
 #container {
   flex-grow: 1;
-  /* width: 100%; */
-  /* max-width: 50rem; */
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   padding: 2rem 4rem;
 }
 
@@ -53,8 +52,7 @@ body {
   #container {
     flex-grow: 1;
     width: 100%;
-    /* max-width: 50rem; */
-    padding: 1rem 2rem;
+    padding: 1rem 0.5rem;
   }
 }
 
@@ -62,6 +60,7 @@ body {
 form {
   /* min-height: 20vh; */
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
@@ -118,7 +117,6 @@ form button:hover {
 /* COMPONENT todo list */
 .todo-list {
   flex-grow: 1;
-  /* overflow-y: hidden; */
   margin: 1rem 0;
 }
 .todo-item {
@@ -127,25 +125,28 @@ form button:hover {
   background-color: var(--primary-dark);
   color: white;
   margin: 0.5rem 0 0.5rem 0;
-  padding: 1rem 0.8rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.6rem;
   align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  .todo-item {
+    padding: 0.2rem 0.5rem;
+  }
 }
 .task-name {
   flex-grow: 1;
   padding: 0.2rem 0.5rem;
   margin-left: 0.5rem;
 }
-
 .done-btn {
   border: var(--secondary-purple) 0.2rem solid;
-  height: 20px;
-  width: 20px;
+  height: 1.5rem;
+  width: 1.5rem;
   background-color: var(--primary-dark);
   border-radius: 50%;
   cursor: pointer;
 }
-
 .remove-btn {
   background: var(--primary-dark);
   color: var(--secondary-purple);
@@ -154,14 +155,27 @@ form button:hover {
   cursor: pointer;
   font-size: 1rem;
 }
-
-.done-btn,
+.done-btn:hover {
+  border-color: var(--secondary-blue);
+  transition: all 50ms ease;
+  /* background-color: var(--secondary-blue); */
+}
 .remove-btn:hover {
   color: white;
+  transition: all 50ms ease;
 }
-
 .todo-done > .task-name {
-  text-decoration: line-through;
+  text-decoration-line: line-through;
+  text-decoration-thickness: 2px;
+  color: rgba(255, 255, 255, 0.794);
+  transition: all 10s ease;
+}
+.todo-done > .done-btn {
+  border-color: var(--secondary-blue);
+  background-color: var(--secondary-blue);
+  size: 1rem;
+  color: white;
+  transition: all 70ms ease;
 }
 /* END COMPONENT todo item */
 

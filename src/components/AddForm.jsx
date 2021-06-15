@@ -11,13 +11,12 @@ const AddForm=({todoList, setTodoList})=>{
             todoItemId=todoList[todoList.length-1]['id']+1;
         }
         setTodoList([ ...todoList,{'name':addTaskValue,'completed':false,'id':todoItemId}]);
-        setAddTaskValue('');
-        // e.target.value.set('')
+        // setAddTaskValue('');
     };
 
     return(
         <form className="add-task-form" onSubmit={addFormSubmitHandler}>
-            <input onChange={ e => setAddTaskValue(e.target.value)} type="text" name="addTask" placeholder="Add task" />
+            <input value={addTaskValue} onChange={ e => setAddTaskValue(e.target.value)} type="text" name="addTask" placeholder="Add task" />
             <button type="submit">Submit</button>
         </form>
     );
