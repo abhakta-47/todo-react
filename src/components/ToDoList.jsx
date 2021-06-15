@@ -9,7 +9,7 @@ export default function ToDoList({todoList,setTodoList}) {
         // console.log("compeleting", id);
         setTodoList( todoList.map( todoListItem =>{
             if(todoListItem.id===id)
-                todoListItem.completed=true;
+                todoListItem.completed= !todoListItem.completed;
             return todoListItem;
         }  ) )
     }
