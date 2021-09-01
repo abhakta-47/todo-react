@@ -11,9 +11,10 @@ function App() {
 
   useEffect(()=>{
     const rawData=localStorage.getItem("todoList");
-    const savedTodoList = JSON.parse(rawData);
-    // console.log('called 2', savedTodoList);
-    setTodoList(savedTodoList);
+    if(rawData){
+      const savedTodoList = JSON.parse(rawData);
+      setTodoList(savedTodoList);
+    }
   },[])
   
   useEffect(() => {
